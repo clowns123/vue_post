@@ -1,4 +1,10 @@
-import { fetchNewsList, fetchAskList, fetchJobsList } from "../api/index";
+import {
+  fetchNewsList,
+  fetchAskList,
+  fetchJobsList,
+  fetchUserInfo,
+  fetchItemInfo,
+} from "../api/index";
 
 export default {
   async FETCH_NEWS(context) {
@@ -12,5 +18,13 @@ export default {
   async FETCH_ASK(context) {
     const data = await fetchAskList();
     context.commit("SET_ASK", data);
-  }
+  },
+  async FETCH_USER({ commit }, name) {
+    const data = await fetchUserInfo(name);
+    commit("SET_USER", data);
+  },
+  async FETCH_ITEM({ commit }, id) {
+    const data = await fetchItemInfo(id);
+    commit("SET_ITEM", data);
+  },
 };

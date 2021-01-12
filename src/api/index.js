@@ -2,7 +2,7 @@ import axios from "axios";
 
 // HTTP Request & Response와 관련된 기본 설정
 const config = {
-  baseUrl: "https://api.hnpwa.com/v0/"
+  baseUrl: "https://api.hnpwa.com/v0/",
 };
 
 // API 함수들을 정리
@@ -21,4 +21,19 @@ async function fetchJobsList() {
   return data;
 }
 
-export { fetchNewsList, fetchAskList, fetchJobsList };
+async function fetchUserInfo(username) {
+  const { data } = await axios.get(`${config.baseUrl}user/${username}.json`);
+  return data;
+}
+async function fetchItemInfo(id) {
+  const { data } = await axios.get(`${config.baseUrl}item/${id}.json`);
+  return data;
+}
+
+export {
+  fetchNewsList,
+  fetchAskList,
+  fetchJobsList,
+  fetchUserInfo,
+  fetchItemInfo,
+};

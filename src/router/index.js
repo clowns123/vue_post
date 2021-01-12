@@ -6,7 +6,7 @@ import NewsView from "../views/NewsView.vue";
 import JobsView from "../views/JobsView.vue";
 import AskView from "../views/AskView.vue";
 import UserView from "../views/UserView.vue";
-import ItemVuew from "../views/ItemVuew.vue";
+import ItemView from "../views/ItemView.vue";
 
 Vue.use(VueRouter);
 
@@ -17,9 +17,9 @@ const router = new VueRouter({
     { path: "/news", component: NewsView },
     { path: "/ask", component: AskView },
     { path: "/jobs", component: JobsView },
-    { path: "/user", component: UserView },
-    { path: "/item", component: ItemVuew }
-  ]
+    { path: "/user/:id", component: UserView },
+    { path: "/item/:id", component: ItemView },
+  ],
 });
 
 export default router;

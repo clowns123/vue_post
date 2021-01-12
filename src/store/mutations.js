@@ -7,5 +7,11 @@ export default {
   },
   SET_ASK(state, data) {
     state.ask = data;
-  }
+  },
+  SET_USER(state, data) {
+    state.user = data;
+  },
+  SET_ITEM(state, data) {
+    state.item = data;
+  },
 };
