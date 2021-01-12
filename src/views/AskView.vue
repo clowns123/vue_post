@@ -1,9 +1,23 @@
 <template>
-    <div>Ask</div>
+  <div>
+    <div v-for="(item, index) in fetchedAsk" :key="index">
+      {{ item.title }}
+    </div>
+  </div>
 </template>
 
 <script>
-export default {};
+import { mapGetters } from "vuex";
+export default {
+  computed: {
+    ...mapGetters({
+      fetchedAsk: "fetchedAsk"
+    })
+  },
+  async created() {
+    this.$store.dispatch("FETCH_ASK");
+  }
+};
 </script>
 
 <style></style>

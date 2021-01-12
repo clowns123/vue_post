@@ -26,4 +26,20 @@
 
 `npm i vue-router --save`
 
-router은 `src/router`이라는 폴더에서 관리하자
+router은 `src/router`이라는 폴더에서 관리하고 main.js는 라우터를 받아 설정만 하자
+
+# 3. 비동기
+비동기 처리는 컴포넌트에서 처리하지 말고 일괄적으로 api라는 폴더를 만들어서 처리한다.
+
+# 4. store
+store도 sotre라는 폴더를 만들어서 관리해주자
+
+vuex에서 
+actions는 백엔드 api 데이터를
+mutations는 vuex state 데이터를 
+관리한다.
+
+vuex에서 데이터를 가져오는 방법 중 3가지를 소개하겠다.
+1. this.$store.state."state 이름"을 통해 컴포넌트에서 사용하는 방법
+2. mapState를 통해 컴포넌트에서 ...mapState를 통해 사용하는 방법
+3. getters을 통해 컴포넌트에서 ...mapGetters를 통해 사용하는 방법
